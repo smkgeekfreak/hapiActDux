@@ -31,7 +31,7 @@ server.register([{
             jsx: require('hapi-react-views')
         },
         relativeTo: __dirname,
-        path: 'views'
+        path: 'app/views'
     });
 
     // Add a route to serve static assets (CSS, JS, IMG)
@@ -51,7 +51,7 @@ server.register([{
       method: 'GET',
       path: '/',
       handler: {
-        view: 'Default'
+        view: 'Main'
       }
     });
 

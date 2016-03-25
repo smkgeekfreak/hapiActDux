@@ -62,7 +62,7 @@ function getFilterTodos(todos,filter) {
 //   <Block fontFamily='Helvetica, Arial, sans-serif'>
 //   {children}
 //   </Block>;
-
+//
 // const Center = ({ children }) =>
 //   <Flex alignItems='center'
 //         justifyContent='center'
@@ -113,14 +113,19 @@ class Application extends React.Component {
                   />
                 </div>
                 </div>
-                <VisFilter
-                  onShowAll={() =>
-                    store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_ALL)) }
-                  onShowActive={() =>
-                   store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_ACTIVE)) }
-                  onShowCompleted={() =>
-                   store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED)) }
-                />
+                <SplitPane split="vertical" minSize="100" defaultSize="300">
+                  <Griddle results={getFilterTodos(store.getState().todos,store.getState().visibilityFilter)}/>
+                  <div>
+                    <VisFilter
+                      onShowAll={() =>
+                        store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_ALL)) }
+                      onShowActive={() =>
+                       store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_ACTIVE)) }
+                      onShowCompleted={() =>
+                       store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED)) }
+                    />
+                  </div>
+                </SplitPane>
           </SplitPane>
         </SplitPane>
       </div>
