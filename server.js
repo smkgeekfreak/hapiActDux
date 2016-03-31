@@ -49,7 +49,7 @@ server.register([{
     // Add main app route
     server.route({
       method: 'GET',
-      path: '/',
+      path: '/all',
       handler: {
         view: 'Main'
       }
