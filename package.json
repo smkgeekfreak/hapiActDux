@@ -4,13 +4,17 @@
   "description": "Hapi react app",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack -p --progress",
-    "dev": "webpack --progress --color --watch & nodemon"
+    "start-web": "node server.js",
+    "build-web": "webpack -p --progress",
+    "dev-web": "webpack --progress --color --watch & nodemon",
+    "start-desk": "./node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron ./main.js",
+    "watch-desk": "./node_modules/.bin/webpack-dev-server",
+    "electron-rebuild": "./node_modules/.bin/electron-rebuild"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "electron-prebuilt": "^0.36.4",
     "dateformat": "^1.0.12",
     "hapi": "^13.2.1",
     "hapi-react-views": "^6.0.0",
@@ -39,6 +43,7 @@
     "less-loader": "^2.2.2",
     "nodemon": "^1.9.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   }
 }
