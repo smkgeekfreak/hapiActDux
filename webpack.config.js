@@ -6,11 +6,12 @@ module.exports = {
 output: {
   path: './public/built',
   filename: 'bundle.js',
-  publicPath: 'http://localhost:8000/built/'
+  publicPath: 'http://localhost:8070/built/'
 },
 devServer: {
   contentBase: './public',
-  publicPath: 'http://localhost:8000/built/'
+  publicPath: 'http://localhost:8070/built/',
+  port: process.env.PORT || 8070
 },
 module: {
  loaders: [
