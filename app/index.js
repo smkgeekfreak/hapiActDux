@@ -84,8 +84,8 @@ class Application extends React.Component {
         <SplitPane split="vertical" minSize="175" defaultSize="200">
           <div className="urDiv">
             <h1>This is longer</h1>
-            <Text value="try to improve"/>
-            <Text value="test and measure"/>
+            <Text value="try to improve this"/>
+            <Text value="test and measure me"/>
             <Text value={store.getState().counter}/>
             <AddTodoPres
               onAddClick={ text=> store.dispatch(addTodo(text)) }

@@ -6,5 +6,5 @@
     "node_modules/**/node_modules",
     "app/*"
   ],
-  "ext": "js json jsx"
+  "ext": "js json jsx html"
 }
