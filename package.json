@@ -12,7 +12,8 @@
     "electron-rebuild": "./node_modules/.bin/electron-rebuild",
     "test": "nyc ava",
     "cover": "nyc check-coverage --lines 95 --functions 95 --branches 95 report",
-    "watch:test": "ava --watch"
+    "watch:test": "ava --watch",
+    "ava": "ava"
   },
   "ava": {
     "require": ["babel-register"],
