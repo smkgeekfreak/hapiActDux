@@ -10,13 +10,14 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 const getState = {};
-const store = mockStore(getState);
+// const store = mockStore(getState);
+const dispatch = sinon.spy();
 const onClick = sinon.spy();
 
 test('contains class "urDiv" ', t => {
     const wrapper = shallow(
     <Group
-      onClick={() => store.dispatch(onClick())}
+      onClick={() => dispatch(onClick())}
       name="myGroup"
     />);
     t.true(wrapper.hasClass('urDiv'));
@@ -25,7 +26,7 @@ test('contains class "urDiv" ', t => {
 test('has name "namedGroup" ', t => {
     const wrapper = shallow(
     <Group
-      onClick={() => store.dispatch(onClick())}
+      onClick={() => dispatch(onClick())}
       name="namedGroup"
     />);
     const li = wrapper.find('li');
@@ -35,7 +36,7 @@ test('has name "namedGroup" ', t => {
 test('click group', t => {
     const wrapper = shallow(
     <Group
-      onClick={() => store.dispatch(onClick())}
+      onClick={() => dispatch(onClick())}
       name="clickMe"
     />);
     const li = wrapper.find('li');

@@ -16,7 +16,9 @@
     "ava": "ava"
   },
   "ava": {
-    "require": ["babel-register"],
+    "require": [
+      "babel-register"
+    ],
     "babel": "inherit",
     "files": [
       "test.js",
@@ -25,7 +27,7 @@
       "!**/not-this-file.js"
     ],
     "watch": false,
-    "verbose":true
+    "verbose": true
   },
   "nyc": {
     "extension": [
@@ -40,22 +42,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron-prebuilt": "^0.36.4",
     "dateformat": "^1.0.12",
+    "electron-prebuilt": "^0.36.4",
+    "griddle-react": "^0.3.1",
     "hapi": "^13.2.1",
     "hapi-react-views": "^6.0.0",
     "inert": "^3.2.0",
+    "install": "^0.4.1",
     "object-assign": "^4.0.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "vision": "^4.0.1",
-    "griddle-react": "^0.3.1",
-    "install": "^0.4.1",
     "react-redux": "^4.0.6",
     "react-split-pane": "^0.1.23",
     "redux": "^3.0.5",
     "redux-thunk": "^1.0.3",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "vision": "^4.0.1"
   },
   "devDependencies": {
     "ava": "^0.15.1",
@@ -71,8 +73,8 @@
     "less-loader": "^2.2.2",
     "nodemon": "^1.9.1",
     "nyc": "^6.4.4",
-    "redux-mock-store": "^1.4.4",
-    "react-addons-test-utils": "^14.8.0",
+    "redux-mock-store": "^1.1.2",
+    "react-addons-test-utils": "^0.14.8",
     "style-loader": "^0.13.0",
     "sinon": "^1.17.4",
     "webpack": "^1.12.14",

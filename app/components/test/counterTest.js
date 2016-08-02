@@ -11,6 +11,7 @@ const mockStore = configureMockStore(middlewares);
 
 const getState = {};
 const store = mockStore(getState);
+const dispatch = sinon.spy();
 const countUp = sinon.spy();
 const countDown = sinon.spy();
 
@@ -27,8 +28,8 @@ test('has a myDiv class name', t => {
 test('click `buttons`', t => {
     const wrapper = shallow(
     <Counter value={store.getState()}
-      onInc={() => store.dispatch(countUp())}
-      onDe={() => store.dispatch(countDown())}
+      onInc={() => dispatch(countUp())}
+      onDe={() => dispatch(countDown())}
     />);
     wrapper.find('#increment').simulate('click');
     wrapper.find('#decrement').simulate('click');

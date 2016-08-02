@@ -11,6 +11,7 @@ const mockStore = configureMockStore(middlewares);
 
 const getState = {};
 const store = mockStore(getState);
+const dispatch = sinon.spy();
 const onClick = sinon.spy();
 
 test('contains class "theirDiv" ', t => {
@@ -48,7 +49,7 @@ test('does not contain "Works" ', t => {
 test('click todo', t => {
     const wrapper = shallow(
     <Todo
-      onClick={() => store.dispatch(onClick(1))}
+      onClick={() => dispatch(onClick(1))}
       completed="true"
       text="Works"
     />);
