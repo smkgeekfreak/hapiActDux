@@ -48,7 +48,7 @@ export function groups(state = [], action) {
       let newState = action.json.map(function(j){
           // let jet = JSON.parse(j);
           console.log(j);
-          return {id:j.id,name:j.name,status:'SYNCD'}
+          return {createdAt:j.createdAt,id:j.id,name:j.name,status:'SYNCD'}
         })
       return newState;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-export default ({
+export const Todo = ({
   onClick,
   completed,
   text
@@ -16,3 +16,5 @@ export default ({
       </li>
   </div>
 );
+
+export default Todo;

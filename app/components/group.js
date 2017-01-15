@@ -1,5 +1,5 @@
 import React from 'react';
-export default ({
+export const Group = ({
   onClick,
   name
 }) => (
@@ -9,3 +9,5 @@ export default ({
       </li>
   </div>
 );
+
+export default Group;

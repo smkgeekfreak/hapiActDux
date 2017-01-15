@@ -19,8 +19,8 @@ var Default = React.createClass({
         <div id="root"></div>
 
         <div id="app"></div>
-        <script src="http://localhost:8000/webpack-dev-server.js"></script>
-        <script src="http://localhost:8000/built/bundle.js"></script>
+        <script src="http://localhost:8070/webpack-dev-server.js"></script>
+        <script src="http://localhost:8070/built/bundle.js"></script>
       </body>
       </html>
     );

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import Todo from './todo'
-const TodoList = ( props, onTodoClick ) => (
+export const TodoList = ( props, onTodoClick ) => (
   <div className='theirDiv'>
   <ul>
     {props.todos.map( todo =>

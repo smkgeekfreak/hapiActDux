@@ -81,7 +81,7 @@ export function addTodo(text) {
     // now that the Store has been notified of the new todo item, we
     // should also notify our server - we'll use here ES6 fetch
     // function to post the data
-    fetch('http://192.168.99.100:9080/crud', {
+    fetch('http://localhost:9080/crud', {
       method: 'post',
       headers: {
         //'Accept': 'application/json',
@@ -112,14 +112,15 @@ export function addGroup(name) {
     let g = dispatch(addGroupOptimistic(name));
     console.log("new group:" + JSON.stringify(g))
     //
-    fetch('http://192.168.99.100:10001/crud', {
+    fetch('http://localhost:8090/group/create', {
       method: 'post',
       headers: {
         // 'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: name
+        name: name,
+        status: 'PENDING'
       })
     }).then(response => {
       console.log(response);
@@ -133,7 +134,9 @@ export function addGroup(name) {
     // Error: handle it the way you like, undoing the optimistic update,
     //  showing a "out of sync" message, etc.
     console.log(err);
-    });
+  }).then(json => {
+    dispatch(loadGroups())
+  });
   // what you return here gets returned by the dispatch function that
   // used this action creator
   return null;
@@ -143,7 +146,8 @@ export function addGroup(name) {
 export function loadGroups() {
   return function(dispatch) {
     //
-    fetch('http://192.168.99.100:10001/crud/all', {
+    //fetch('http://192.168.99.100:10001/crud/all', {
+    fetch('http://localhost:8090/groups', {
       method: 'get',
       headers: {
         // 'Accept': 'application/json',

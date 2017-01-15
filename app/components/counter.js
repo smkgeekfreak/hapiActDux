@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default({
+export const Counter = ({
     value,
     onInc,
     onDe
@@ -11,3 +11,5 @@ export default({
     <button id="decrement" onClick={onDe}>Down</button>
     </div>
 );
+
+export default Counter;
