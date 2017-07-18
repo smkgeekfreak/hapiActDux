@@ -44,3 +44,9 @@ test('click group', t => {
     li.simulate('click');
     t.true(onClick.calledTwice);
 });
+
+test.todo('will think about writing this group test later');
+
+test.failing('demonstrate some bug that will pass', t => {
+    t.fail(); // test will count as passed
+});

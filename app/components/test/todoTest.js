@@ -58,3 +58,29 @@ test('click todo', t => {
     li.simulate('click');
     t.true(onClick.calledTwice);
 });
+
+test('completed has line-through', t => {
+    const wrapper = shallow(
+    <Todo
+      onClick={() => store.dispatch(onClick(1))}
+      completed={true}
+      text="NotWorking"
+    />);
+    const li = wrapper.find('li');
+    const prop = li.prop('style');
+    console.log(prop);
+    t.deepEqual(prop,{ textDecoration: 'line-through' });
+});
+
+test('not completed does not have line-through', t => {
+    const wrapper = shallow(
+    <Todo
+      onClick={() => store.dispatch(onClick(1))}
+      completed={false}
+      text="Not Completed"
+    />);
+    const li = wrapper.find('li');
+    const prop = li.prop('style');
+    console.log(prop);
+    t.deepEqual(prop,{ textDecoration: 'none' });
+});

@@ -9,8 +9,8 @@ var format = "dd mmm HH:MM:ss";
 // Basic Hapi.js connection stuff
 var server = new Hapi.Server();
 server.connection({
-  host: 'localhost',
-  port: 8000
+//  host: 'localhost',
+  port: 8070
 });
 
 // Register the inert and vision Hapi plugins
