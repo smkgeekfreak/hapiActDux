@@ -1,6 +1,8 @@
-var app = require('app');
-var BrowserWindow = require('browser-window');
-require('crash-reporter').start();
+// var app = require('app');
+var app = require('electron').app;
+var BrowserWindow = require('electron').BrowserWindow;
+// var CrashReporter = require('electron').crashReporter;
+// CrashReporter.start();
 var mainWindow = null;
 
 app.on('window-all-closed', function() {
@@ -10,12 +12,15 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-  mainWindow = new BrowserWindow({width: 800, height: 600});
-  mainWindow.loadUrl('file://' + __dirname + '/public/index.html');
+  mainWindow = new BrowserWindow({width: 1000, height: 600});
+  mainWindow.loadURL('file://' + __dirname + '/public/index.html');
   mainWindow.openDevTools();
   mainWindow.on('closed', function() {
     mainWindow = null;
   });
+  // set kiosk mode
+  // mainWindow.setKiosk(true);
+  // mainWindow.maximize();
 });
 
 const ipc = require('electron').ipcMain;
