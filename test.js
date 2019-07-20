@@ -1,3 +1,4 @@
+// KE-1551 & GH-2
 import test from 'ava';
 
 test('foo', t => {
