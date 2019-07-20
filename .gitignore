@@ -1,4 +1,5 @@
 #comment about nothing
+#make another changes #2 & KE-1551
 /node_modules
 /public/built
 /.nyc_output
